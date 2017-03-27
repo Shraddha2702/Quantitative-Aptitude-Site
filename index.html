@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+</!DOCTYPE html>
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+	<title>Loading Page</title>
+
+	<style>
+
+	.whole
+	{
+		max-height: 500px;
+		margin: auto auto;
+		text-align: center;
+		
+	}
+
+	.first 
+	{
+		font-family: 'Fredoka One', cursive;
+		font-size:150px;
+		color: rgba(234,134,234,1);
+		padding: 20px;
+		cursor: pointer;
+	}
+
+	.second 
+	{
+		font-family: 'Fredoka One', cursive;
+		font-size:50px;
+		color: rgba(234,134,234,1);
+		padding: 10px;
+		cursor: pointer;
+	}
+
+
+	#loadingBar
+	{
+		position: relative;
+		width: 250px;
+		height: 25px;
+		border: 2px solid #222;
+		margin: 0 auto;
+		margin-top: 50px;
+		background-color: grey;
+	}
+
+	#loadingBrick
+	{
+		position: absolute;
+		height: 25px;
+		border-radius: 0px;
+		width: 1%;
+		background-color: #EE82EE;
+	}
+
+	#loadingPercent
+	{
+		position: relative;
+		color: #aaa;
+		font-size: 175%;
+		padding:10px;
+		margin-top: 30px;
+	}
+
+
+	</style>
+</head>
+
+<body>
+
+<div class="whole">
+
+	<div class="first" onclick="move()">
+		Quantitative Aptitude
+	</div>
+
+	<div class="second" onclick="move()">
+		A Fun Study Guide
+	</div>
+
+<div id="loadingBar">
+	<div id="loadingBrick"></div>
+	<div id="loadingPercent"> 0 %</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+	function move()
+	{
+		var elem= document.getElementById("loadingBrick");
+		var width=1;
+		var id=setInterval(frame,10);
+
+		function frame()
+		{
+			if(width>=100)
+			{
+				clearInterval(id);
+				window.location.href="MainPage.html";
+			}
+
+			else
+			{
+				width++;
+				elem.style.width=width+'%';
+				document.getElementById("loadingPercent").innerHTML=width*1+'%';
+			}
+		}
+	}
+</script>
+
+
+
+</body>
+</html>

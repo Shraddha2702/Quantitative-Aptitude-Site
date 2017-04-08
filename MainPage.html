@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+<title> Main Page </title>
+
+<style type="text/css">
+
+	body
+	{
+		
+		background-color: #E1F5FE;
+		animation: anim;
+		animation-timing-function: ease-in-out;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+
+	@keyframes anim
+	{
+		20%
+		{
+			background-color:#B3E5FC ;
+		}
+
+		50%
+		{
+			background-color:#81D4FA ;
+		}
+		100%
+		{
+			background-color: #4FC3F7;
+		}
+	}
+
+	
+	.upper
+	{
+		position: fixed;
+		height: auto;
+		width: 100%;
+		display: inline;
+		background-color: rgba(211,211,211,1);
+		top: 0;
+		left: 0;
+		outline: 0;
+		border-bottom: #000 1px solid;
+		font-family: 'ABeeZee', sans-serif;
+
+	}
+
+	.right
+	{
+		position: relative;
+		float: left;
+		margin-left: 20px;
+		padding-top: 10px;
+		display: inline;
+	}
+
+	.right h1
+	{
+		font-family: 'ABeeZee', sans-serif;
+		width: 70%;
+	}
+
+	.left
+	{
+		font-family: 'ABeeZee', sans-serif;
+		position: relative;
+		float: right;
+		margin-right: 40px;
+		padding-top: 50px;
+	}
+
+	button
+	{
+		padding: 10px;
+		background-color: rgba(192,192,192,1);
+		border-color:rgba(0,0,0,1);
+		border-radius: 5px;
+		border:#000 1px solid;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	}
+
+	.name
+	{
+		margin-right: 20px;
+	}
+
+	.wrapul
+	{
+		margin-top: 250px;
+		position: fixed;
+		display: inline;
+		width: 100%;
+    	margin-right: auto;
+    	margin-left: auto;
+    	/*padding-right: 10%;*/
+	}
+
+	.ulink
+	{
+		display: inline;
+		padding-right: 35px;
+		transition: all 5s ease-in-out;
+		-webkit-transition: all 5s ease-in-out;
+		cursor: pointer;
+	}
+
+	img
+	{
+		width: 220px;
+		height: 230px;
+		border: #455A64 2px solid;
+		border-radius: 5px;
+		box-shadow: 5px 5px 7px rgba(0,0,0,0.5);
+		/*transition: all 0.4s ease-in-out;
+		-webkit-transition: all 0.4s ease-in-out;
+		-moz-transition: all 0.4s ease-in-out;*/
+	}
+
+	#topics:hover #topicsid, #tricks:hover #tricksid,#books:hover #booksid,
+	#pdf:hover #pdfid,#about:hover #usid
+	{
+		/*width: 230px;
+		height: 240px;*/
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);	
+	}
+
+
+
+	#topicsid
+	{
+		transform: scale(0.8,0.8) rotate(-10deg);
+	}
+
+	#tricksid
+	{
+		transform: scale(0.8,0.8) rotate(10deg);
+	}
+
+	#booksid
+	{
+		transform: scale(0.8,0.8) rotate(-10deg);
+	}
+
+	#pdfid
+	{
+		transform: scale(0.8,0.8) rotate(10deg);
+	}
+
+	#usid
+	{
+		transform: scale(0.8,0.8) rotate(-10deg);
+	}
+</style>
+</head>
+
+<body>
+<div class="whole">
+<div class="upper">
+	<div class="right">
+		<h1 style="font-size:40px">Quantitative Aptitude</h1>
+
+	</div>
+
+	<div class="left">
+
+		<img src="logo.jpg" style="width:80px;height:80px;margin-bottom:20px"></img>
+
+		</div>
+	</div>
+
+	<div class="wrapul">
+		<div class="ulink" id="topics"><a href="topics.html"><img src="StudyTopics.jpg" id="topicsid"></a></div>
+		<div class="ulink" id="tricks"><a href="MathsTricks.html"><img src="MathsTricks.jpg" id="tricksid"></a></div>
+		<div class="ulink" id="books"><a href="Books.html"><img src="Books.jpg" id="booksid"></a></div>
+		<div class="ulink" id="pdf"><a href="pdf.html"><img src="pdfs.jpg" id="pdfid"></a></div>
+		<div class="ulink" id="about"><a href="AboutUs.html"><img src="AboutUs.jpg" id="usid"></a></div>
+	</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+</!DOCTYPE html>
+<html>
+<head>
+
+	<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+	<title>Probability</title>
+<style type="text/css">
+
+body
+{
+	margin-right: 0px;
+	margin-left: 0px;
+	background-color: #FFCBD3;
+}
+
+header
+	{
+		position: fixed;
+		width: 100%;
+		height: auto;
+		left: 0;
+		top: 0;
+		line-height: 50px;
+		background: rgba(132,231,132,1);
+		z-index: 10;
+		border-bottom: #767676 1px solid;
+	}
+.heading
+{
+	font-family: 'ABeeZee', sans-serif;
+	position: relative;
+	left: 75px;
+	display: inline;
+	line-height: 65px;
+	font-size: 35px;
+	color: rgba(123,123,122,1);
+}
+
+.float {
+	font-family: 'Merriweather', serif;
+	position: fixed;
+	width: 23%;
+	height: 100%;
+	left: 100%;
+	top: 0%;
+	background-color: #e6e6e6;
+	z-index: 100;
+	transition: all .3s ease-in-out;
+}
+.box {
+	position: absolute;
+	width: 100%;
+	left: 0%;
+	height: 9.55%;
+	font-size: 145%;
+	text-align: center;
+	cursor: pointer;
+	background-color: #e6e6e6;
+	color: #222;
+}
+#box1 {
+	top: 0%;
+	height: 14%;
+	background-color: #202020;
+	color: #aaa;
+	font-size: 300%;
+	font-family: 'maleficent';
+	letter-spacing: 2px;
+}
+#box2 {
+	top: 14%;
+}
+#box3 {
+	top: 23.55%;
+}
+#box4 {
+	top: 33.1%;
+}
+#box5 {
+	top: 42.65%;
+	font-size: 140%;
+}
+#box6 {
+	top: 52.2%;
+}
+#box7 {
+	top: 61.75%;
+}
+#box8 {
+	top: 71.3%;
+}
+#box9 {
+	top: 80.85%;
+}
+#box10 {
+	top: 90.4%;
+}
+.hamburger {
+	top: 0%;
+	position: fixed;
+	right: 0%;
+	width: 3%;
+	z-index: 101;
+	cursor: pointer;
+}
+#filler {
+	position: fixed;
+	top: 0%;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 99;
+	opacity: 0.7;
+}
+</style>
+<style type="text/css">
+#nav-toggle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+#nav-toggle {
+	cursor: pointer;
+	padding: 10px 35px 16px 0px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	height: 4px;
+	width: 40px;
+	background: #aaa;
+	position: absolute;
+	display: block;
+	content: '';
+}
+#nav-toggle span:before {
+	top: -10px;
+}
+#nav-toggle span:after {
+	bottom: -10px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	transition: all 0.3s ease-in-out;
+}
+#nav-toggle.active span {
+	background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+	top: 0;
+}
+#nav-toggle.active span:before {
+	transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+	transform: rotate(-45deg);
+}
+.contain {
+	position: absolute;
+	top: 2%;
+	right: 1%;
+	height: 5%;
+	width: 8%;
+}
+.box {
+	display: table;
+}
+.box span {
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.box:hover {
+	background-color: #aaa;
+}
+
+.list
+{
+	position: relative;
+	margin-top: 65px;
+	padding: 0px;
+	width: 100%;
+	background-color: #BDBDBD;
+}
+
+.top-nav
+{
+	border-bottom: #767676 1px solid;
+	border-top: #767676 1px solid;
+}
+
+.top-nav ul
+{
+	position: relative;
+	margin-top: 12px;
+	list-style-type: none;
+	overflow: hidden;
+	padding-left: 0px;
+
+}
+
+
+.top-nav a
+{
+	font-family: 'Oxygen', sans-serif;
+	text-decoration: none;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	padding: 10px 12px;
+
+}
+
+.top-nav li:hover
+{
+	background-color: #000;
+}
+
+.top-nav li
+{
+	display: inline-block;
+	list-style: none;
+}
+
+
+</style>
+
+<body>
+<HEADER>
+<div class="heading"><strong>Probabilty</strong></div>
+
+
+<div class="contain" style="top:25px;"><a id="nav-toggle" onclick="menu()" class="hamburger"><span></span></a></div>
+<div id="filler"></div>
+<div class="float" id="float"><a href="loading.html">
+  <div id="box1" class="box"><span>Guide</span></div>
+  </a> <a href="MainPage.html">
+  <div id="box2" class="box"><span>Main Page</span></div>
+  </a> <a href="topics.html">
+  <div id="box3" class="box"><span>Study Topics</span></div>
+  </a> <a href="MathsTricks.html">
+  <div id="box4" class="box"><span>Maths Tricks</span></div>
+  </a> <a href="Books.html">
+  <div id="box5" class="box"><span>Books</span></div>
+  </a> <a href="pdf.html">
+  <div id="box6" class="box"><span>PDFs</span></div>
+  </a> <a href="AboutUs.html">
+  <div id="box7" class="box"><span>About Us</span></div>
+  </a> 
+ </div>
+
+</HEADER>
+
+<div class="list">
+<ul class="top-nav">
+	<li><a href="NumberSystem.html">Basics</a></li>
+	<li><a href="Arithmetic.html">Arithmetic</a></li>
+	<li><a href="Algebra.html">Algebra</a></li>
+	<li><a href="Mensuration.html">Mensuration</a></li>
+	<li><a href="SetTheory.html">Set Theory</a></li>
+	<li><a href="Geometry.html">Geometry</a></li>
+	<li><a href="statistics.html">Statistics</a></li>
+	<li><a href="Permutation.html">Permutation and Combination</a></li>
+	<li><a href="probabilty.html">Probability</a></li>
+</ul>
+</div>	
+
+
+  <script type="text/javascript">function menu(){if (document.getElementById("float").style.left=="77%"){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}else{document.getElementById("float").style.left="77%";document.getElementById("filler").style.left="0%";}}function nomenu(){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}</script> <script type="text/javascript">document.querySelector( "#nav-toggle" ) .addEventListener( "click", function(){this.classList.toggle( "active" );});</script>
+  
+<style type="text/css">
+	.Content
+	{
+		width: 80%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: auto;
+		margin-top: 55px;
+		padding-bottom: 50px;
+		background-color: #fff;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	}
+
+	.depth
+	{
+		padding: 20px;
+	}
+
+	.depth .img
+	{
+		margin-top: 20px;
+
+	}
+	.depth img
+	{
+		display: block;
+		width: 75%;
+		height: 50%;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+	.boxcontent
+	{
+		display: block;
+		width: 100%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+		border:#000 2px solid;
+		margin-top: 30px;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+		
+	}
+	.boxcontent .info
+	{
+		padding: 5px 10px;
+	}
+
+	
+
+	.video
+	{
+		margin-top: 40px;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+	
+</style>
+
+<div class="Content">
+	<div class="depth">
+
+		<div class="img">
+			<img src="ProbabilityCover.gif"/>
+			</div>
+
+		<div class="text">
+			<p style="font-family: 'Oxygen', sans-serif;margin-top:25px">
+			<p>Probability has a dual aspect: on the one hand the likelihood of hypotheses given the evidence for them, and on the other hand the behavior of stochastic processes such as the throwing of dice or coins. The study of the former is historically older in, for example, the law of evidence, while the mathematical treatment of dice began with the work of Cardano, Pascal and Fermat between the 16th and 17th century.<br/><br/>
+
+			Probability is distinguished from statistics. While statistics deals with data and inferences from it, (stochastic) probability deals with the stochastic (random) processes which lie behind data or outcomes.<br/>
+			Probable and probability and their cognates in other modern languages derive from medieval learned Latin probabilis and, deriving from Cicero and generally applied to an opinion to mean plausible or generally approved. The mathematical sense of the term is from 1718. In the 18th century, the term chance was also used in the mathematical sense of "probability" (and probability theory was called Doctrine of Chances). This word is ultimately from Latin cadentia, i.e. "a fall, case". The English adjective likely is of Germanic origin, most likely from Old Norse likligr (Old English had geliclic with the same sense), originally meaning "having the appearance of being strong or able" "having the similar appearance or qualities, with a meaning of "probably" recorded from the late 14th century. Similarly, the derived noun likelihood had a meaning of "similarity, resemblance" but took on a meaning of "probability" from the mid 15th century.<br/><br/></p>
+		</div>
+
+		
+
+		<div class="boxcontent">
+			<div class="info">
+			<div id="OverviewButton" class="Overview" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleOverview()"><h2>Overview</h2></div>
+			<div id="ans1" class="OverD" style="font-family: 'Oxygen', sans-serif;display:none; ">
+				<p>Children should have opportunities to handle shapes and parts of shapes before they begin to explore fractions. Provide hands-on activities that focus on shapes with matching parts and shapes with nonmatching parts. Explore symmetrical shapes and objects in your classroom.<br/><br/>
+
+				Be aware that children with perceptual or visual-organization problems will need extra guidance when working with symmetrical and asymmetrical shapes and fractions. If children have kinesthetic needs, then connecting cubes, colored rods, and pattern blocks will be helpful to reinforce concepts about fractions.<br/>
+
+				Although many children are familiar with the terms half and one half, they may not have a good understanding of the term equal parts. Paper strips can help children to understand that a fraction, such as one half, is part of a whole. Have children fold paper strips so that both ends meet. Ask children to show that both parts are exactly the same size. Point out that two parts make up the whole strip of paper. Then introduce the term one half. After children have experiences identifying halves, repeat the activity with thirds and fourths.<br/><br/>
+				In daily life, children make judgments based on uncertain information: Will it snow? Who will win the football game? Who will be first in line? These judgments lay the foundation for the idea of probability—the likelihood that a certain event will happen. If a child says that it will probably snow, how does he or she arrive at this conclusion? One reason that the concept of probability is introduced is to have children explore how to calculate the likelihood that a certain event will occur. Exploring concepts of probability helps the child interpret judgments when there is uncertainty. Children begin to understand that some problems involving uncertainty can be analyzed mathematically.<br/><br/></p>
+			</div>
+
+			<div class="border" style="border-bottom:#000 1px solid"></div>
+
+
+			<div id="BasicButton" class="BasicRules" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleBasic()"><h2>Basic Rules</h2></div>
+			<div id="ans2" class="br" style="font-family: 'Oxygen', sans-serif;display:none;">
+				<p><h2>Rules of Probability</h2>
+
+				 <b>Rules of probability:</b> 
+				Often, we want to compute the probability of an event from the known probabilities of other events. This lesson covers some important rules that simplify those computations.<br/>
+
+				<h3>Definitions and Notation</h3><br/>
+				Before discussing the rules of probability, we state the following definitions:<br/>
+
+				Two events are mutually exclusive or disjoint if they cannot occur at the same time.<br/>
+
+				The probability that Event A occurs, given that Event B has occurred, is called a conditional probability. The conditional probability of Event A, given Event B, is denoted by the symbol P(A|B).<br/>
+
+				The complement of an event is the event not occurring. The probability that Event A will not occur is denoted by P(A').<br/>
+
+				The probability that Events A and B both occur is the probability of the intersection of A and B. The probability of the intersection of Events A and B is denoted by P(A ∩ B). If Events A and B are mutually exclusive, P(A ∩ B) = 0.<br/><br/>
+
+				The probability that Events A or B occur is the probability of the union of A and B. The probability of the union of Events A and B is denoted by P(A ∪ B) .<br/><br/>
+
+				If the occurrence of Event A changes the probability of Event B, then Events A and B are dependent. On the other hand, if the occurrence of Event A does not change the probability of Event B, then Events A and B are independent.<br/><br/>
+				
+				The probability of an event ranges from 0 to 1.<br/>
+				The sum of probabilities of all possible events equals 1.<br/>
+				The rule of subtraction follows directly from these properties.<br/><br/>
+
+				<h3>Rule of Subtraction</h3> The probability that event A will occur is equal to 1 minus the probability that event A will not occur.
+				P(A) = 1 - P(A')<br/><br/>
+				Suppose, for example, the probability that Bill will graduate from college is 0.80. What is the probability that Bill will not graduate from college? Based on the rule of subtraction, the probability that Bill will not graduate is 1.00 - 0.80 or 0.20.<br/><br/>
+
+				<h3>Rule of Multiplication</h3><br/>
+				The rule of multiplication applies to the situation when we want to know the probability of the intersection of two events; that is, we want to know the probability that two events (Event A and Event B) both occur.<br/><br/>
+
+				Rule of Multiplication The probability that Events A and B both occur is equal to the probability that Event A occurs times the probability that Event B occurs, given that A has occurred.<br/>
+				P(A ∩ B) = P(A) P(B|A)<br/><br/>
+				<h3>Example<br/>
+				An urn contains 6 red marbles and 4 black marbles. Two marbles are drawn without replacement from the urn. What is the probability that both of the marbles are black?</h3><br/>
+
+				Solution: Let A = the event that the first marble is black; and let B = the event that the second marble is black. We know the following:<br/>
+
+				In the beginning, there are 10 marbles in the urn, 4 of which are black. Therefore, P(A) = 4/10.<br/>
+				After the first selection, there are 9 marbles in the urn, 3 of which are black. Therefore, P(B|A) = 3/9.<br/>
+				Therefore, based on the rule of multiplication:<br/>
+
+				P(A ∩ B) = P(A) P(B|A) <br/>
+				P(A ∩ B) = (4/10) * (3/9) = 12/90 = 2/15<br/><br/>
+				Rule of Addition<br/>
+				The rule of addition applies to the following situation. We have two events, and we want to know the probability that either event occurs.<br/><br/>
+
+				<h3>Rule of Addition The probability that Event A or Event B occurs is equal to the probability that Event A occurs plus the probability that Event B occurs minus the probability that both Events A and B occur.</h3><br/>
+				P(A ∪ B) = P(A) + P(B) - P(A ∩ B))<br/>
+
+				<h4>Note: Invoking the fact that P(A ∩ B) = P( A )P( B | A ), the Addition Rule can also be expressed as <br/>
+				P(A ∪ B) = P(A) + P(B) - P(A)P( B | A )</h4><br/><br/>
+				<h3>Example<br/>
+				A student goes to the library. The probability that she checks out (a) a work of fiction is 0.40, (b) a work of non-fiction is 0.30, and (c) both fiction and non-fiction is 0.20. What is the probability that the student checks out a work of fiction, non-fiction, or both?</h3><br/>
+
+				Solution: Let F = the event that the student checks out fiction; and let N = the event that the student checks out non-fiction. Then, based on the rule of addition:<br/>
+
+				P(F ∪ N) = P(F) + P(N) - P(F ∩ N)<br/> 
+				P(F ∪ N) = 0.40 + 0.30 - 0.20 = 0.50<br/><br/></p>
+			</div>
+			<div class="border" style="border-bottom:#000 1px solid"></div>
+
+			<div id="QuestionButton" class="Questions" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleQuestions()">
+			<h2>Questions</h2></div>
+			<div id="ans3" class="ques" style="display:none;font-family: 'Oxygen', sans-serif;">
+				<p><h3>Problem 1<br/>
+
+				An urn contains 6 red marbles and 4 black marbles. Two marbles are drawn with replacement from the urn. What is the probability that both of the marbles are black?</h3><br/>
+
+				(A) 0.16 <br/>
+				(B) 0.32 <br/>
+				(C) 0.36 <br/>
+				(D) 0.40 <br/>
+				(E) 0.60<br/><br/>
+
+				Solution<br/>
+
+				The correct answer is A. Let A = the event that the first marble is black; and let B = the event that the second marble is black. We know the following:<br/>
+
+				In the beginning, there are 10 marbles in the urn, 4 of which are black. Therefore, P(A) = 4/10.<br/>
+				After the first selection, we replace the selected marble; so there are still 10 marbles in the urn, 4 of which are black. <br/>Therefore, P(B|A) = 4/10.<br/>
+				Therefore, based on the rule of multiplication:<br/>
+
+				P(A ∩ B) = P(A) P(B|A) <br/>
+				P(A ∩ B) = (4/10)*(4/10) = 16/100 = 0.16<br/><br/>
+
+
+				<h3>Problem 2<br/>
+
+				A card is drawn randomly from a deck of ordinary playing cards. You win $10 if the card is a spade or an ace. What is the probability that you will win the game?</h3><br/>
+
+				(A) 1/13 <br/>
+				(B) 13/52 <br/>
+				(C) 4/13 <br/>
+				(D) 17/52 <br/>
+				(E) None of the above.<br/><br/>
+
+				Solution<br/>
+
+				The correct answer is C. Let S = the event that the card is a spade; and let A = the event that the card is an ace. We know the following:<br/>
+
+				There are 52 cards in the deck.<br/>
+				There are 13 spades, so P(S) = 13/52.<br/>
+				There are 4 aces, so P(A) = 4/52.<br/>
+				There is 1 ace that is also a spade, so P(S ∩ A) = 1/52.<br/>
+				Therefore, based on the rule of addition:<br/><br/>
+
+				P(S ∪ A) = P(S) + P(A) - P(S ∩ A) <br/>
+				P(S ∪ A) = 13/52 + 4/52 - 1/52 = 16/52 = 4/13<br/><br/></p>
+			</div>
+			</div>
+		</div>
+
+		<div class="video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/-MhrmNcBNoc" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	function toggleOverview()
+	{
+      var show=document.getElementById('ans1');
+      var display=show.style.display;
+      if(display=='block')
+      {
+      	show.style.display='none';
+      }
+      else
+      {
+      	show.style.display='block';
+      }
+	}
+
+	function toggleBasic()
+	{
+		var show=document.getElementById('ans2');
+		var display=show.style.display;
+		if(display=='block')
+		{
+			show.style.display='none';
+		}
+		else
+		{
+			show.style.display='block';
+		}
+	}
+
+	function toggleQuestions()
+	{
+		var show=document.getElementById('ans3');
+		var display=show.style.display;
+		if(display=='block')
+		{
+			show.style.display='none';
+		}
+		else
+		{
+			show.style.display='block';
+		}
+	}
+</script>
+</body>
+</html>

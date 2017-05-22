@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+</!DOCTYPE html>
+<html>
+<head>
+
+	<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+	<title>Set Theory</title>
+<style type="text/css">
+
+body
+{
+	margin-right: 0px;
+	margin-left: 0px;
+	background-color: #FFCBD3;
+}
+
+header
+	{
+		position: fixed;
+		width: 100%;
+		height: auto;
+		left: 0;
+		top: 0;
+		line-height: 50px;
+		background: rgba(132,231,132,1);
+		z-index: 10;
+		border-bottom: #767676 1px solid;
+	}
+.heading
+{
+	font-family: 'ABeeZee', sans-serif;
+	position: relative;
+	left: 75px;
+	display: inline;
+	line-height: 65px;
+	font-size: 35px;
+	color: rgba(123,123,122,1);
+}
+
+.float {
+	font-family: 'Merriweather', serif;
+	position: fixed;
+	width: 23%;
+	height: 100%;
+	left: 100%;
+	top: 0%;
+	background-color: #e6e6e6;
+	z-index: 100;
+	transition: all .3s ease-in-out;
+}
+.box {
+	position: absolute;
+	width: 100%;
+	left: 0%;
+	height: 9.55%;
+	font-size: 145%;
+	text-align: center;
+	cursor: pointer;
+	background-color: #e6e6e6;
+	color: #222;
+}
+#box1 {
+	top: 0%;
+	height: 14%;
+	background-color: #202020;
+	color: #aaa;
+	font-size: 300%;
+	font-family: 'maleficent';
+	letter-spacing: 2px;
+}
+#box2 {
+	top: 14%;
+}
+#box3 {
+	top: 23.55%;
+}
+#box4 {
+	top: 33.1%;
+}
+#box5 {
+	top: 42.65%;
+	font-size: 140%;
+}
+#box6 {
+	top: 52.2%;
+}
+#box7 {
+	top: 61.75%;
+}
+#box8 {
+	top: 71.3%;
+}
+#box9 {
+	top: 80.85%;
+}
+#box10 {
+	top: 90.4%;
+}
+.hamburger {
+	top: 0%;
+	position: fixed;
+	right: 0%;
+	width: 3%;
+	z-index: 101;
+	cursor: pointer;
+}
+#filler {
+	position: fixed;
+	top: 0%;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 99;
+	opacity: 0.7;
+}
+</style>
+<style type="text/css">
+#nav-toggle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+#nav-toggle {
+	cursor: pointer;
+	padding: 10px 35px 16px 0px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	height: 4px;
+	width: 40px;
+	background: #aaa;
+	position: absolute;
+	display: block;
+	content: '';
+}
+#nav-toggle span:before {
+	top: -10px;
+}
+#nav-toggle span:after {
+	bottom: -10px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	transition: all 0.3s ease-in-out;
+}
+#nav-toggle.active span {
+	background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+	top: 0;
+}
+#nav-toggle.active span:before {
+	transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+	transform: rotate(-45deg);
+}
+.contain {
+	position: absolute;
+	top: 2%;
+	right: 1%;
+	height: 5%;
+	width: 8%;
+}
+.box {
+	display: table;
+}
+.box span {
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.box:hover {
+	background-color: #aaa;
+}
+
+.list
+{
+	position: relative;
+	margin-top: 65px;
+	padding: 0px;
+	width: 100%;
+	background-color: #BDBDBD;
+}
+
+.top-nav
+{
+	border-bottom: #767676 1px solid;
+	border-top: #767676 1px solid;
+}
+
+.top-nav ul
+{
+	position: relative;
+	margin-top: 12px;
+	list-style-type: none;
+	overflow: hidden;
+	padding-left: 0px;
+
+}
+
+
+.top-nav a
+{
+	font-family: 'Oxygen', sans-serif;
+	text-decoration: none;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	padding: 10px 12px;
+
+}
+
+.top-nav li:hover
+{
+	background-color: #000;
+}
+
+.top-nav li
+{
+	display: inline-block;
+	list-style: none;
+}
+
+
+</style>
+
+<body>
+<HEADER>
+<div class="heading"><strong>Set Theory</strong></div>
+
+
+<div class="contain" style="top:25px;"><a id="nav-toggle" onclick="menu()" class="hamburger"><span></span></a></div>
+<div id="filler"></div>
+<div class="float" id="float"><a href="loading.html">
+  <div id="box1" class="box"><span>Guide</span></div>
+  </a> <a href="MainPage.html">
+  <div id="box2" class="box"><span>Main Page</span></div>
+  </a> <a href="topics.html">
+  <div id="box3" class="box"><span>Study Topics</span></div>
+  </a> <a href="MathsTricks.html">
+  <div id="box4" class="box"><span>Maths Tricks</span></div>
+  </a> <a href="Books.html">
+  <div id="box5" class="box"><span>Books</span></div>
+  </a> <a href="pdf.html">
+  <div id="box6" class="box"><span>PDFs</span></div>
+  </a> <a href="AboutUs.html">
+  <div id="box7" class="box"><span>About Us</span></div>
+  </a> 
+ </div>
+
+</HEADER>
+
+<div class="list">
+<ul class="top-nav">
+	<li><a href="NumberSystem.html">Basics</a></li>
+	<li><a href="Arithmetic.html">Arithmetic</a></li>
+	<li><a href="Algebra.html">Algebra</a></li>
+	<li><a href="Mensuration.html">Mensuration</a></li>
+	<li><a href="SetTheory.html">Set Theory</a></li>
+	<li><a href="Geometry.html">Geometry</a></li>
+	<li><a href="statistics.html">Statistics</a></li>
+	<li><a href="Permutation.html">Permutation and Combination</a></li>
+	<li><a href="probabilty.html">Probability</a></li>
+</ul>
+</div>	
+
+
+  <script type="text/javascript">function menu(){if (document.getElementById("float").style.left=="77%"){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}else{document.getElementById("float").style.left="77%";document.getElementById("filler").style.left="0%";}}function nomenu(){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}</script> <script type="text/javascript">document.querySelector( "#nav-toggle" ) .addEventListener( "click", function(){this.classList.toggle( "active" );});</script>
+  
+<style type="text/css">
+	.Content
+	{
+		width: 80%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: auto;
+		margin-top: 55px;
+		padding-bottom: 50px;
+		background-color: #fff;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	}
+
+	.depth
+	{
+		padding: 20px;
+	}
+
+	.depth .img
+	{
+		margin-top: 20px;
+
+	}
+	.depth img
+	{
+		display: block;
+		width: 75%;
+		height: 50%;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+	.boxcontent
+	{
+		display: block;
+		width: 100%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+		border:#000 2px solid;
+		margin-top: 30px;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+		
+	}
+	.boxcontent .info
+	{
+		padding: 5px 10px;
+	}
+
+	
+
+	.video
+	{
+		margin-top: 40px;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+	
+</style>
+
+<div class="Content">
+	<div class="depth">
+
+		<div class="img">
+			<img src="SetTheoryCover.gif"/>
+			</div>
+
+		<div class="text">
+			<p style="font-family: 'Oxygen', sans-serif;margin-top:25px">Set theory is the branch of mathematical logic that studies sets, which informally are collections of objects. Although any type of object can be collected into a set, set theory is applied most often to objects that are relevant to mathematics. The language of set theory can be used in the definitions of nearly all mathematical objects.
+
+			The modern study of set theory was initiated by Georg Cantor and Richard Dedekind in the 1870s. After the discovery of paradoxes in naive set theory, numerous axiom systems were proposed in the early twentieth century, of which the Zermelo Fraenkel axioms, with the axiom of choice, are the best-known.<br/><br/>
+
+			Set theory is commonly employed as a foundational system for mathematics, particularly in the form of Zermelo Fraenkel set theory with the axiom of choice. Beyond its foundational role, set theory is a branch of mathematics in its own right, with an active research community. Contemporary research into set theory includes a diverse collection of topics, ranging from the structure of the real number line to the study of the consistency of large cardinals.<br/>	</p>
+		</div>
+
+		
+
+		<div class="boxcontent">
+			<div class="info">
+			<div id="OverviewButton" class="Overview" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleOverview()"><h2>Overview</h2></div>
+			<div id="ans1" class="OverD" style="font-family: 'Oxygen', sans-serif;display:none; ">
+			<p>
+				In this article I'll be going into some of the basics of Set Theory.  This is once again an article that will grow over time and become more and more mature as I have new things to add.  The goal is to understand the basics for now and to grow these basics into something more substantial.  Before I start with this article I would advise you to have a look at my article covering "Numerical Systems" and get to get to grip with the Laws of Numbers seeing that this and the other articles I'll be doing will be building on the base that I'm trying to create.  Again, I have to state that these articles are more for my own use than for someone else's, so if you're not interested I'm sure there is something else on this site that might be of more interest to you. <br/><br/>
+
+				In this article I'll be covering the following fundamentals:<br/>
+
+					<ul>
+
+					<li>Symbols in Set Theory</li>
+					<li>Definition</li>
+					<li>Set Notation</li>
+					<li>List Notation</li>
+					<li>Set Builder Notation</li>
+					<li>New Sets</li>
+					<li>Subset</li>
+					<li>Union</li>
+					<li>Intersection</li>
+					<li>Universal Set</li>
+					<li>Empty Set</li>
+					<li>Complement</li>
+					<li>Cartesian Product</li>
+					<li>Symmetric Difference</li>
+					<li>Disjoint Sets</li>
+					<li>Cardinality</li>
+					<li>Power Set</li>
+
+				</ul></p><br/>
+			</div>
+
+			<div class="border" style="border-bottom:#000 1px solid"></div>
+
+
+			<div id="BasicButton" class="BasicRules" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleBasic()"><h2>Basic Rules</h2></div>
+			<div id="ans2" class="br" style="font-family: 'Oxygen', sans-serif;display:none;">
+			<p>
+						<b>	Here we will learn about some of the laws of algebra of sets.</b><br/><br/>
+
+			 <h3>1. Commutative Laws:</h3><br/>
+
+				For any two finite sets A and B;<br/>
+
+				(i) A U B = B U A<br/>
+
+				(ii) A ∩ B = B ∩ A<br/><br/>
+
+
+
+				<h3>2. Associative Laws:</h3><br/>
+
+				For any three finite sets A, B and C;<br/>
+
+				(i) (A U B) U C = A U (B U C)<br/>
+
+				(ii) (A ∩ B) ∩ C = A ∩ (B ∩ C)<br/>
+
+				Thus, union and intersection are associative.<br/><br/>
+
+
+
+				<h3>3. Idempotent Laws:</h3><br/>
+
+				For any finite set A;<br/>
+
+				(i) A U A = A<br/>
+
+				(ii) A ∩ A = A<br/><br/>
+
+
+
+				<h3>4. Distributive Laws:</h3><br/>
+
+				For any three finite sets A, B and C;<br/>
+
+				(i) A U (B ∩ C) = (A U B) ∩ (A U C)<br/>
+
+				(ii) A ∩ (B U C) = (A ∩ B) U (A ∩ C)<br/>
+
+				Thus, union and intersection are distributive over intersection and union respectively.<br/><br/>
+
+
+
+				<h3>5. De Morgan’s Laws:</h3><br/>
+
+				 For any two finite sets A and B;<br/>
+
+				(i) A – (B U C) = (A – B) ∩ (A – C)<br/>
+
+				(ii) A - (B ∩ C) = (A – B) U (A – C)<br/>
+
+				De Morgan’s Laws can also we written as:<br/>
+
+				(i) (A U B)’ = A' ∩ B'<br/>
+
+				(ii) (A ∩ B)’ = A' U B'<br/><br/>
+
+
+
+				<b>More laws of algebra of sets:</b><br/><br/>
+
+				<b>6.</b> For any two finite sets A and B;<br/>
+
+				(i) A – B = A ∩ B'<br/>
+
+				(ii) B – A = B ∩ A'<br/>
+
+				(iii) A – B = A ⇔ A ∩ B = ∅<br/>
+
+				(iv) (A – B) U B = A U B<br/>
+
+				(v) (A – B) ∩ B = ∅<br/>
+
+				(vi) A ⊆ B ⇔ B' ⊆ A'<br/>
+
+				(vii) (A – B) U (B – A) = (A U B) – (A ∩ B)<br/><br/>
+
+
+
+				<b>7.</b> For any three finite sets A, B and C;<br/>
+
+				(i) A – (B ∩ C) = (A – B) U (A – C)<br/>
+
+				(ii) A – (B U C) = (A – B) ∩ (A – C)<br/>
+
+				(iii) A ∩ (B - C) = (A ∩ B) - (A ∩ C)<br/>
+
+				(iv) A ∩ (B △ C) = (A ∩ B) △ (A ∩ C)<br/><br/></p>
+
+
+			</div>
+			<div class="border" style="border-bottom:#000 1px solid"></div>
+
+			<div id="QuestionButton" class="Questions" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleQuestions()"><h2>Questions</h2></div>
+			<div id="ans3" class="ques" style="display:none;font-family: 'Oxygen', sans-serif;">
+			<p>
+			<h3>1. Let A and B be two finite sets such that n(A) = 20, n(B) = 28 and n(A ∪ B) = 36, find n(A ∩ B).</h3><br/>
+
+			Solution: <br/>
+
+			Using the formula n(A ∪ B) = n(A) + n(B) - n(A ∩ B). <br/>
+
+			then n(A ∩ B) = n(A) + n(B) - n(A ∪ B) <br/>
+
+			                   = 20 + 28 - 36 <br/>
+
+			                   = 48 - 36 <br/>
+
+			                   = 12 <br/><br/>
+
+
+			<h3>2. If n(A - B) = 18, n(A ∪ B) = 70 and n(A ∩ B) = 25, then find n(B).<h3><br/>
+
+			Solution: <br/>
+
+			Using the formula n(A∪B) = n(A - B) + n(A ∩ B) + n(B - A) <br/>
+
+			                              70 = 18 + 25 + n(B - A) <br/>
+
+			                              70 = 43 + n(B - A) <br/>
+
+			                      n(B - A) = 70 - 43 <br/>
+
+			                      n(B - A) = 27 <br/>
+
+			Now n(B) = n(A ∩ B) + n(B - A) <br/>
+
+			             = 25 + 27 <br/>
+
+			             = 52 <br/><br/>
+
+
+			<b>Different types on word problems on sets:</b><br/><br/>
+
+			<h3>3. In a group of 60 people, 27 like cold drinks and 42 like hot drinks and each person likes at least one of the two drinks. How many like both coffee and tea?</h3><br/>
+
+			Solution: <br/>
+
+			Let A = Set of people who like cold drinks. <br/>
+
+			     B = Set of people who like hot drinks. <br/>
+
+			Given <br/>
+
+			(A ∪ B) = 60            n(A) = 27       n(B) = 42 then;<br/>
+
+			n(A ∩ B) = n(A) + n(B) - n(A ∪ B) <br/>
+
+			            = 27 + 42 - 60 <br/>
+
+			            = 69 - 60 = 9 <br/>
+
+			            = 9 <br/>
+
+			Therefore, 9 people like both tea and coffee. <br/><br/>
+
+
+			<h3>4. There are 35 students in art class and 57 students in dance class. Find the number of students who are either in art class or in dance class.<br/>
+
+			• When two classes meet at different hours and 12 students are enrolled in both activities.<br/>
+
+			• When two classes meet at the same hour.</h3> <br/>
+
+			Solution: <br/>
+
+			n(A) = 35,       n(B) = 57,       n(A ∩ B) = 12 <br/>
+
+			(Let A be the set of students in art class. <br/>
+			B be the set of students in dance class.) <br/>
+
+			(i) When 2 classes meet at different hours n(A ∪ B) = n(A) + n(B) - n(A ∩ B) <br/>
+
+			                                                                    = 35 + 57 - 12 <br/>
+
+			                                                                    = 92 - 12 <br/>
+
+			                                                                    = 80 <br/>
+
+			(ii) When two classes meet at the same hour, A∩B = ∅ n (A ∪ B) = n(A) + n(B) - n(A ∩ B) <br/>
+
+			                                                                                       = n(A) + n(B) <br/>
+
+			                                                                                       = 35 + 57 <br/><br/><br/>
+
+			                                                                                       = 92<br/><br/>
+
+
+
+			<b>Further concept to solve word problems on sets:</b><br/>
+
+			<h3>5. In a group of 100 persons, 72 people can speak English and 43 can speak French. How many can speak English only? How many can speak French only and how many can speak both English and French?</h3><br/>
+
+			Solution: <br/>
+
+			Let A be the set of people who speak English. <br/>
+
+			B be the set of people who speak French. <br/>
+
+			A - B be the set of people who speak English and not French. <br/>
+
+			B - A be the set of people who speak French and not English. <br/>
+
+			A ∩ B be the set of people who speak both French and English. <br/>
+
+			Given, <br/>
+
+			n(A) = 72       n(B) = 43       n(A ∪ B) = 100 <br/>
+
+			Now, n(A ∩ B) = n(A) + n(B) - n(A ∪ B) <br/>
+
+			                   = 72 + 43 - 100 <br/>
+
+			                   = 115 - 100 <br/>
+
+			                   = 15 <br/>
+
+			Therefore, Number of persons who speak both French and English = 15 <br/>
+
+			n(A) = n(A - B) + n(A ∩ B) <br/>
+
+			⇒ n(A - B) = n(A) - n(A ∩ B) <br/>
+
+			               = 72 - 15<br/> 
+
+			               = 57<br/>
+
+			and n(B - A) = n(B) - n(A ∩ B) <br/>
+
+			                 = 43 - 15 <br/>
+
+			                 = 28 <br/>
+
+			Therefore, Number of people speaking English only = 57 <br/>
+
+			Number of people speaking French only = 28<br/> 
+
+
+			<b>Word problems on sets using the different properties (Union and Intersection):</b><br/>
+
+			<h3>6. In a competition, a school awarded medals in different categories. 36 medals in dance, 12 medals in dramatics and 18 medals in music. If these medals went to a total of 45 persons and only 4 persons got medals in all the three categories, how many received medals in exactly two of these categories?</h3><br/>
+
+			Solution: <br/>
+
+			Let A = set of persons who got medals in dance.<br/>
+
+			B = set of persons who got medals in dramatics.<br/> 
+
+			C = set of persons who got medals in music. <br/>
+
+			Given, <br/>
+
+			n(A) = 36                              n(B) = 12       n(C) = 18 <br/>
+
+			n(A ∪ B ∪ C) = 45       n(A ∩ B ∩ C) = 4 <br/>
+
+			We know that number of elements belonging to exactly two of the three sets A, B, C <br/>
+
+			= n(A ∩ B) + n(B ∩ C) + n(A ∩ C) - 3n(A ∩ B ∩ C) <br/>
+
+			= n(A ∩ B) + n(B ∩ C) + n(A ∩ C) - 3 × 4       ……..(i) <br/>
+
+			n(A ∪ B ∪ C) = n(A) + n(B) + n(C) - n(A ∩ B) - n(B ∩ C) - n(A ∩ C) + n(A ∩ B ∩ C) <br/>
+
+			Therefore, n(A ∩ B) + n(B ∩ C) + n(A ∩ C) = n(A) + n(B) + n(C) + n(A ∩ B ∩ C) - n(A ∪ B ∪ C) <br/>
+
+			From (i) required number <br/>
+
+			= n(A) + n(B) + n(C) + n(A ∩ B ∩ C) - n(A ∪ B ∪ C) - 12 <br/>
+
+			= 36 + 12 + 18 + 4 - 45 - 12 <br/>
+
+			= 70 - 67 <br/>
+
+			= 3 <br/><br/>
+
+
+			<b>Apply set operations to solve the word problems on sets:</b><br/>
+
+			<h3>7. Each student in a class of 40 plays at least one indoor game chess, carrom and scrabble. 18 play chess, 20 play scrabble and 27 play carrom. 7 play chess and scrabble, 12 play scrabble and carrom and 4 play chess, carrom and scrabble. Find the number of students who play (i) chess and carrom. (ii) chess, carrom but not scrabble.</h3><br/>
+
+			Solution: <br/>
+
+			Let A be the set of students who play chess <br/>
+
+			B be the set of students who play scrabble <br/>
+
+			C be the set of students who play carrom <br/>
+
+			Therefore, We are given n(A ∪ B ∪ C) = 40, <br/>
+
+			n(A) = 18,         n(B) = 20         n(C) = 27, <br/>
+
+			n(A ∩ B) = 7,     n(C ∩ B) = 12    n(A ∩ B ∩ C) = 4 <br/>
+
+			We have <br/>
+
+			n(A ∪ B ∪ C) = n(A) + n(B) + n(C) - n(A ∩ B) - n(B ∩ C) - n(C ∩ A) + n(A ∩ B ∩ C) <br/>
+
+			Therefore, 40 = 18 + 20 + 27 - 7 - 12 - n(C ∩ A) + 4 <br/>
+
+			40 = 69 – 19 - n(C ∩ A) <br/>
+
+			40 = 50 - n(C ∩ A) n(C ∩ A) = 50 - 40 <br/>
+
+			n(C ∩ A) = 10 <br/>
+
+			Therefore, Number of students who play chess and carrom are 10. <br/>
+
+			Also, number of students who play chess, carrom and not scrabble. <br/>
+
+			= n(C ∩ A) - n(A ∩ B ∩ C) <br/>
+
+			= 10 – 4 <br/>
+
+			= 6<br/><br/>
+
+			Therefore, we learned how to solve different types of word problems on sets without using Venn diagram.<br/><br/>
+
+			</p>
+			</div>
+			</div>
+		</div>
+
+		<div class="video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/hupkYQh2ADE" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	function toggleOverview()
+	{
+      var show=document.getElementById('ans1');
+      var display=show.style.display;
+      if(display=='block')
+      {
+      	show.style.display='none';
+      }
+      else
+      {
+      	show.style.display='block';
+      }
+	}
+
+	function toggleBasic()
+	{
+		var show=document.getElementById('ans2');
+		var display=show.style.display;
+		if(display=='block')
+		{
+			show.style.display='none';
+		}
+		else
+		{
+			show.style.display='block';
+		}
+	}
+
+	function toggleQuestions()
+	{
+		var show=document.getElementById('ans3');
+		var display=show.style.display;
+		if(display=='block')
+		{
+			show.style.display='none';
+		}
+		else
+		{
+			show.style.display='block';
+		}
+	}
+</script>
+</body>
+</html>

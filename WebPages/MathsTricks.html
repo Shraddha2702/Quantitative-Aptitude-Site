@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<title>Tricks</title>
+</head>
+
+<style type="text/css">
+
+header
+	{
+		position: fixed;
+		width: 100%;
+		height: auto;
+		left: 0;
+		top: 0;
+		line-height: 50px;
+		background: #FFDAB9;
+		border-bottom: #000 1px solid;
+	}
+.heading
+{
+	font-family: 'ABeeZee', sans-serif;
+	position: relative;
+	left: 75px;
+	display: inline;
+	line-height: 65px;
+	font-size: 35px;
+	color: rgba(123,123,122,1);
+}
+
+.float {
+	font-family: 'Merriweather', serif;
+	position: fixed;
+	width: 23%;
+	height: 100%;
+	left: 100%;
+	top: 0%;
+	background-color: #e6e6e6;
+	z-index: 100;
+	transition: all .3s ease-in-out;
+}
+.box {
+	position: absolute;
+	width: 100%;
+	left: 0%;
+	height: 9.55%;
+	font-size: 145%;
+	text-align: center;
+	cursor: pointer;
+	background-color: #e6e6e6;
+	color: #222;
+}
+#box1 {
+	top: 0%;
+	height: 14%;
+	background-color: #202020;
+	color: #aaa;
+	font-size: 300%;
+	font-family: 'maleficent';
+	letter-spacing: 2px;
+}
+#box2 {
+	top: 14%;
+}
+#box3 {
+	top: 23.55%;
+}
+#box4 {
+	top: 33.1%;
+}
+#box5 {
+	top: 42.65%;
+	font-size: 140%;
+}
+#box6 {
+	top: 52.2%;
+}
+#box7 {
+	top: 61.75%;
+}
+#box8 {
+	top: 71.3%;
+}
+#box9 {
+	top: 80.85%;
+}
+#box10 {
+	top: 90.4%;
+}
+.hamburger {
+	top: 0%;
+	position: fixed;
+	right: 0%;
+	width: 3%;
+	z-index: 101;
+	cursor: pointer;
+}
+#filler {
+	position: fixed;
+	top: 0%;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 99;
+	opacity: 0.7;
+}
+</style>
+<style type="text/css">
+#nav-toggle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+#nav-toggle {
+	cursor: pointer;
+	padding: 10px 35px 16px 0px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	height: 4px;
+	width: 40px;
+	background: #aaa;
+	position: absolute;
+	display: block;
+	content: '';
+}
+#nav-toggle span:before {
+	top: -10px;
+}
+#nav-toggle span:after {
+	bottom: -10px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	transition: all 0.3s ease-in-out;
+}
+#nav-toggle.active span {
+	background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+	top: 0;
+}
+#nav-toggle.active span:before {
+	transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+	transform: rotate(-45deg);
+}
+.contain {
+	position: absolute;
+	top: 2%;
+	right: 1%;
+	height: 5%;
+	width: 8%;
+}
+.box {
+	display: table;
+}
+.box span {
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.box:hover {
+	background-color: #aaa;
+}
+
+</style>
+
+<body>
+<HEADER>
+
+<div class="heading"><strong>Maths Tricks</strong></div>
+
+<div class="contain" style="top:25px;"><a id="nav-toggle" onclick="menu()" class="hamburger"><span></span></a></div>
+<div id="filler"></div>
+<div class="float" id="float"><a href="loading.html">
+  <div id="box1" class="box"><span>Guide</span></div>
+  </a> <a href="MainPage.html">
+  <div id="box2" class="box"><span>Main Page</span></div>
+  </a> <a href="topics.html">
+  <div id="box3" class="box"><span>Study Topics</span></div>
+  </a> <a href="MathsTricks.html">
+  <div id="box4" class="box"><span>Maths Tricks</span></div>
+  </a> <a href="Books.html">
+  <div id="box5" class="box"><span>Books</span></div>
+  </a> <a href="pdf.html">
+  <div id="box6" class="box"><span>PDFs</span></div>
+  </a> <a href="AboutUs.html">
+  <div id="box7" class="box"><span>About Us</span></div>
+  </a> 
+ </div>
+</HEADER>
+
+
+	
+
+
+ <script type="text/javascript">function menu(){if (document.getElementById("float").style.left=="77%"){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}else{document.getElementById("float").style.left="77%";document.getElementById("filler").style.left="0%";}}function nomenu(){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}</script> <script type="text/javascript">document.querySelector( "#nav-toggle" ) .addEventListener( "click", function(){this.classList.toggle( "active" );});</script>
+
+
+ <!--Main Part of the Page-->
+<style type="text/css">
+	body
+	{
+		background-color: #AFEEEE;
+	}
+	.Box
+	{
+		width: 90%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: auto;
+		margin-top: 150px;
+		padding-bottom: 40px;
+		background-color: #FFFAFA;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	}
+
+	.z-depth
+	{
+		padding: 30px;
+		padding-bottom: 10px;
+		height: auto;
+		display: block;
+		line-height: 20px;
+		display: block;
+	}
+</style>
+
+ <div class="Box">
+	<div class="z-depth">
+	<style type="text/css">
+		#container {
+ 	width: 1000px;
+ 	overflow: hidden;
+ 	margin: 50px auto;
+ 	background: white;
+ 	border: #F06292 3px solid;
+	}
+
+	.photobanner {
+ 	height: 233px;
+ 	width: 2500px;
+ 	margin-bottom: 80px;
+	}
+
+	.first {
+     -webkit-animation: bannermove 30s linear infinite;
+     -moz-animation: bannermove 30s linear infinite;
+     -ms-animation: bannermove 30s linear infinite;
+     -o-animation: bannermove 30s linear infinite;
+      animation: bannermove 30s linear infinite;
+		}
+		 
+		@keyframes "bannermove" {
+		 0% {
+		    margin-left: 0px;
+		 }
+		 100% {
+		    margin-left: -2125px;
+		 }
+		 
+		}
+		 
+		@-moz-keyframes bannermove {
+		 0% {
+		   margin-left: 0px;
+		 }
+		 100% {
+		   margin-left: -2125px;
+		 }
+		 
+		}
+		 
+		@-webkit-keyframes "bannermove" {
+		 0% {
+		   margin-left: 0px;
+		 }
+		 100% {
+		   margin-left: -2125px;
+		 }
+		 
+		}
+		 
+		@-ms-keyframes "bannermove" {
+		 0% {
+		   margin-left: 0px;
+		 }
+		 100% {
+		   margin-left: -2125px;
+		 }
+		 
+		}
+		 
+		@-o-keyframes "bannermove" {
+		 0% {
+		   margin-left: 0px;
+		 }
+		 100% {
+		   margin-left: -2125px;
+		 }
+		 
+		}
+
+				.photobanner {
+			height: 233px;
+			width: 3550px;
+			margin-bottom: 80px;
+		}
+
+		.photobanner img {
+			width: 250px;
+			height: 313px;
+			-webkit-transition: all 0.5s ease;
+			-moz-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+			-ms-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+		}
+
+		.photobanner img:hover {
+			-webkit-transform: scale(1.1);
+			-moz-transform: scale(1.1);
+			-o-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+			transform: scale(1.1);
+			cursor: pointer;
+
+			-webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+			-moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+			box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+		}
+
+	</style>
+
+	<div class="text" style="font-family: 'Merriweather', serif;padding-bottom:30px"><p> <b>"Is there an easy way to calculate ? "</b>   I am sure you must have asked this question at least once in your life. Have you ever wondered why some people are so good at number crunching, while others struggle to add even the single digits correctly or without straining their mind.<br/><br/>
+
+           Before we go any further, let me tell you one very interesting fact about your mind.  Human mind is designed to be extremely lazy .  This in turn makes it super efficient.  <br/>  <br/>
+
+			Confused ??  <b>Read on...</b><br/>
+			Our mind always seeks to get maximum work done
+   			using minimum effort. <br/><br/>
+			This makes it super productive . We want that at a click of a button ( that too if absolutely unavoidable ) everything should be done. Our clothes and dishes washed, our food cooked, our rooms cleaned, our algebra homework done.<br/>
+			I am sure you could have solved the question above using the harder way (read:  inefficient way) .   But you chose not to as your mind knew that it was not the easy (read:  efficient) way of doing it.<br/>
+		   The person who is good at Math knows by default how to use this quality of mind to his advantage. That is to get maximum work done using bare minimum effort.<br/><br/>
+		   <b>Below are the videos to do the Maths Calculations the easier way, which makes the job much simpler. So sit back Relax and Learn the way :)</b><br/><br/>
+</p></div>
+
+	<div class="video" style="text-align:center">
+	<iframe id="main1" style="border:#F06292 4px solid" width="80%" height="480px" src="https://www.youtube.com/embed/YCBTw8KAqkw"></iframe> </div>
+	
+	<div id="container">
+    
+    <!-- Each image is 350px by 233px 560 315-->
+    <div class="photobanner">
+    	<img class="first" src="image-1.png" onclick="see1()" alt="" />
+    	<img src="image-2.png" onclick="see2()" alt="" />
+    	<img src="image-3.png" onclick="see3()" alt="" />
+    	<img src="image-4.png" onclick="see4()" alt="" />
+    	<img src="image-5.png" onclick="see5()" alt="" />
+    	<img src="image-6.jpg" onclick="see6()" alt="" />
+    	<img src="image-7.jpg" onclick="see7()" alt="" />
+    	<img src="image-8.jpg" onclick="see8()" alt="" />
+    	<img src="image-1.png" onclick="see1()" alt="" />
+    	<img src="image-2.png" onclick="see2()" alt="" />
+    	<img src="image-3.png" onclick="see3()" alt="" />
+    	<img src="image-4.png" onclick="see4()" alt="" />
+    	<img src="image-5.png" onclick="see5()" alt="" />
+    	<img src="image-6.jpg" onclick="see6()" alt="" />
+    	<img src="image-7.jpg" onclick="see7()" alt="" />
+    	<img src="image-8.jpg" onclick="see8()" alt="" />
+    </div>
+</div>
+
+<div class="text" style="font-family: 'Merriweather', serif;padding-top:30px"><p>After watching the video aren't you already calculating
+		 faster than a Calculator.<br/><br/>
+
+		 <b>It's a well known fact that our Human Brain is very similar to a computer.</b><br/>
+		 
+
+		 <h3>Brain =  Hardware of computer. Comparable to CPU.</h3>
+
+		 <h3>Mind =  Software. Comparable to an Operating System</h3>
+		 (like the time tested XP or the latest Windows 8 )<br/><br/>
+
+		 
+
+		Our mind needs various drivers ( programs ) to run its various faculties. Those are stored in our memory. Some brains come right out of the pack with correct programs installed. Thus they can crunch the numbers at optimum speed. <br/><br/>
+		 
+
+		You must be getting eager to ask <b> " What about the brain that didn't come with the right programs installed?"</b><br/><br/>  
+
+		Relax !!  You just have to update your brain once. That's it.<br/><br/> </p></div>
+
+    	
+    </div>
+</div>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	//Multiplication
+	function see1(){
+		 var loc = "https://www.youtube.com/embed/YCBTw8KAqkw";
+        document.getElementById('main1').setAttribute('src', loc);
+	}
+
+
+	//Addition
+	function see2(){
+		var show=document.getElementById("main1");
+		show.src="https://www.youtube.com/embed/kErrJCggE9M";
+	}
+
+
+	//Substraction
+	function see3(){
+		var show=document.getElementById("main1");
+		show.src="https://www.youtube.com/embed/-FgRNrrlU7g";
+	}
+
+
+	//Division
+	function see4(){
+		var show=document.getElementById("main1");
+		show.src="https://www.youtube.com/embed/7cBRXayBNr4";
+	}
+
+
+	//SquareRoots
+	function see5(){
+		var show=document.getElementById("main1");
+		show.src="https://www.youtube.com/embed/e6puK6wEr18";
+	}
+
+	//CubeRoots
+	function see6(){
+		var show=document.getElementById("main1");
+		show.src="https://www.youtube.com/embed/PZeAfgwkdh0";
+	}
+
+
+	//VedicMaths
+	function see7(){
+		var show=document.getElementById("main1");
+		show.src="https://www.youtube.com/embed/_XCmhpkTqPU";
+	}
+
+	//Abacus
+	function see8(){
+		var show=document.getElementById("main1");
+		show.src="https://www.youtube.com/embed/x6sLcPc8beA";
+	}
+
+
+</script>
+</body>
+</html>
+

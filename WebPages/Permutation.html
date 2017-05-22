@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+</!DOCTYPE html>
+<html>
+<head>
+
+	<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+	<title>Permutation and Combination</title>
+<style type="text/css">
+
+body
+{
+	margin-right: 0px;
+	margin-left: 0px;
+	background-color: #FFCBD3;
+}
+
+header
+	{
+		position: fixed;
+		width: 100%;
+		height: auto;
+		left: 0;
+		top: 0;
+		line-height: 50px;
+		background: rgba(132,231,132,1);
+		z-index: 10;
+		border-bottom: #767676 1px solid;
+	}
+.heading
+{
+	font-family: 'ABeeZee', sans-serif;
+	position: relative;
+	left: 75px;
+	display: inline;
+	line-height: 65px;
+	font-size: 35px;
+	color: rgba(123,123,122,1);
+}
+
+.float {
+	font-family: 'Merriweather', serif;
+	position: fixed;
+	width: 23%;
+	height: 100%;
+	left: 100%;
+	top: 0%;
+	background-color: #e6e6e6;
+	z-index: 100;
+	transition: all .3s ease-in-out;
+}
+.box {
+	position: absolute;
+	width: 100%;
+	left: 0%;
+	height: 9.55%;
+	font-size: 145%;
+	text-align: center;
+	cursor: pointer;
+	background-color: #e6e6e6;
+	color: #222;
+}
+#box1 {
+	top: 0%;
+	height: 14%;
+	background-color: #202020;
+	color: #aaa;
+	font-size: 300%;
+	font-family: 'maleficent';
+	letter-spacing: 2px;
+}
+#box2 {
+	top: 14%;
+}
+#box3 {
+	top: 23.55%;
+}
+#box4 {
+	top: 33.1%;
+}
+#box5 {
+	top: 42.65%;
+	font-size: 140%;
+}
+#box6 {
+	top: 52.2%;
+}
+#box7 {
+	top: 61.75%;
+}
+#box8 {
+	top: 71.3%;
+}
+#box9 {
+	top: 80.85%;
+}
+#box10 {
+	top: 90.4%;
+}
+.hamburger {
+	top: 0%;
+	position: fixed;
+	right: 0%;
+	width: 3%;
+	z-index: 101;
+	cursor: pointer;
+}
+#filler {
+	position: fixed;
+	top: 0%;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 99;
+	opacity: 0.7;
+}
+</style>
+<style type="text/css">
+#nav-toggle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+#nav-toggle {
+	cursor: pointer;
+	padding: 10px 35px 16px 0px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	height: 4px;
+	width: 40px;
+	background: #aaa;
+	position: absolute;
+	display: block;
+	content: '';
+}
+#nav-toggle span:before {
+	top: -10px;
+}
+#nav-toggle span:after {
+	bottom: -10px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	transition: all 0.3s ease-in-out;
+}
+#nav-toggle.active span {
+	background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+	top: 0;
+}
+#nav-toggle.active span:before {
+	transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+	transform: rotate(-45deg);
+}
+.contain {
+	position: absolute;
+	top: 2%;
+	right: 1%;
+	height: 5%;
+	width: 8%;
+}
+.box {
+	display: table;
+}
+.box span {
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.box:hover {
+	background-color: #aaa;
+}
+
+.list
+{
+	position: relative;
+	margin-top: 65px;
+	padding: 0px;
+	width: 100%;
+	background-color: #BDBDBD;
+}
+
+.top-nav
+{
+	border-bottom: #767676 1px solid;
+	border-top: #767676 1px solid;
+}
+
+.top-nav ul
+{
+	position: relative;
+	margin-top: 12px;
+	list-style-type: none;
+	overflow: hidden;
+	padding-left: 0px;
+
+}
+
+
+.top-nav a
+{
+	font-family: 'Oxygen', sans-serif;
+	text-decoration: none;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	padding: 10px 12px;
+
+}
+
+.top-nav li:hover
+{
+	background-color: #000;
+}
+
+.top-nav li
+{
+	display: inline-block;
+	list-style: none;
+}
+
+
+</style>
+
+<body>
+<HEADER>
+<div class="heading"><strong>Permutation and Combination</strong></div>
+
+
+<div class="contain" style="top:25px;"><a id="nav-toggle" onclick="menu()" class="hamburger"><span></span></a></div>
+<div id="filler"></div>
+<div class="float" id="float"><a href="loading.html">
+  <div id="box1" class="box"><span>Guide</span></div>
+  </a> <a href="MainPage.html">
+  <div id="box2" class="box"><span>Main Page</span></div>
+  </a> <a href="topics.html">
+  <div id="box3" class="box"><span>Study Topics</span></div>
+  </a> <a href="MathsTricks.html">
+  <div id="box4" class="box"><span>Maths Tricks</span></div>
+  </a> <a href="Books.html">
+  <div id="box5" class="box"><span>Books</span></div>
+  </a> <a href="pdf.html">
+  <div id="box6" class="box"><span>PDFs</span></div>
+  </a> <a href="AboutUs.html">
+  <div id="box7" class="box"><span>About Us</span></div>
+  </a> 
+ </div>
+
+</HEADER>
+
+<div class="list">
+<ul class="top-nav">
+	<li><a href="NumberSystem.html">Basics</a></li>
+	<li><a href="Arithmetic.html">Arithmetic</a></li>
+	<li><a href="Algebra.html">Algebra</a></li>
+	<li><a href="Mensuration.html">Mensuration</a></li>
+	<li><a href="SetTheory.html">Set Theory</a></li>
+	<li><a href="Geometry.html">Geometry</a></li>
+	<li><a href="statistics.html">Statistics</a></li>
+	<li><a href="Permutation.html">Permutation and Combination</a></li>
+	<li><a href="probabilty.html">Probability</a></li>
+</ul>
+</div>	
+
+
+  <script type="text/javascript">function menu(){if (document.getElementById("float").style.left=="77%"){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}else{document.getElementById("float").style.left="77%";document.getElementById("filler").style.left="0%";}}function nomenu(){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}</script> <script type="text/javascript">document.querySelector( "#nav-toggle" ) .addEventListener( "click", function(){this.classList.toggle( "active" );});</script>
+  
+<style type="text/css">
+	.Content
+	{
+		width: 80%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: auto;
+		margin-top: 55px;
+		padding-bottom: 50px;
+		background-color: #fff;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	}
+
+	.depth
+	{
+		padding: 20px;
+	}
+
+	.depth .img
+	{
+		margin-top: 20px;
+
+	}
+	.depth img
+	{
+		display: block;
+		width: 75%;
+		height: 50%;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+	.boxcontent
+	{
+		display: block;
+		width: 100%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+		border:#000 2px solid;
+		margin-top: 30px;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+		
+	}
+	.boxcontent .info
+	{
+		padding: 5px 10px;
+	}
+
+	
+
+	.video
+	{
+		margin-top: 40px;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+	
+</style>
+
+<div class="Content">
+	<div class="depth">
+
+		<div class="img">
+			<img src="PermutationCover.jpg"/>
+			</div>
+
+		<div class="text">
+			<p style="font-family: 'Oxygen', sans-serif;margin-top:25px">
+			<p>In mathematics, the notion of permutation relates to the act of arranging all the members of a set into some sequence or order, or if the set is already ordered, rearranging (reordering) its elements, a process called permuting. These differ from combinations, which are selections of some members of a set where order is disregarded. For example, written as tuples, there are six permutations of the set {1,2,3}, namely: (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), and (3,2,1). These are all the possible orderings of this three element set. As another example, an anagram of a word, all of whose letters are different, is a permutation of its letters. In this example, the letters are already ordered in the original word and the anagram is a reordering of the letters. The study of permutations of finite sets is a topic in the field of combinatorics.<br/><br/>
+
+			Permutations occur, in more or less prominent ways, in almost every area of mathematics. They often arise when different orderings on certain finite sets are considered, possibly only because one wants to ignore such orderings and needs to know how many configurations are thus identified. For similar reasons permutations arise in the study of sorting algorithms in computer science.
+			<br/>
+
+			The number of permutations of n distinct objects is n factorial, usually written as n!, which means the product of all positive integers less than or equal to n.<br/><br/></p>
+		</div>
+
+		
+
+		<div class="boxcontent">
+			<div class="info">
+			<div id="OverviewButton" class="Overview" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleOverview()"><h2>Overview</h2></div>
+			<div id="ans1" class="OverD" style="font-family: 'Oxygen', sans-serif;display:none; "><p>
+			<h3>What's the Difference?</h3>
+
+			In English we use the word "combination" loosely, without thinking if the order of things is important. In other words:<br/><br/>
+
+			"My fruit salad is a combination of apples, grapes and bananas" We don't care what order the fruits are in, they could also be "bananas, grapes and apples" or "grapes, apples and bananas", its the same fruit salad.<br/><br/>
+			 	 
+			"The combination to the safe is 472". Now we do care about the order. "724" won't work, nor will "247". It has to be exactly 4-7-2.<br/><br/>
+			So, in Mathematics we use more accurate language:<br/>
+
+			<h3>If the order doesn't matter, it is a Combination.</h3>
+			<h3>If the order does matter it is a Permutation.</h3><br/></p>
+			</div>
+
+			<div class="border" style="border-bottom:#000 1px solid"></div>
+
+
+			<div id="BasicButton" class="BasicRules" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleBasic()"><h2>Basic Rules</h2></div>
+			<div id="ans2" class="br" style="font-family: 'Oxygen', sans-serif;display:none;"><p>
+			<h3>Factorial Notation:</h3><br/>
+			Let n be a positive integer. Then, factorial n, denoted n! is defined as:<br/>
+			n! = n(n - 1)(n - 2) ... 3.2.1.<br/><br/>
+			Examples:<br/>
+			We define 0! = 1.<br/>
+			4! = (4 x 3 x 2 x 1) = 24<br/>.
+			5! = (5 x 4 x 3 x 2 x 1) = 120.<br/><br/>
+			<h3>Permutations:</h3><br/>
+			The different arrangements of a given number of things by taking some or all at a time, are called permutations.<br/><br/>
+			Examples:<br/>
+			All permutations (or arrangements) made with the letters a, b, c by taking two at a time are (ab, ba, ac, ca, bc, cb).<br/>
+			All permutations made with the letters a, b, c taking all at a time are:<br/>
+			( abc, acb, bac, bca, cab, cba)<br/><br/>
+			Number of Permutations:<br/>
+			Number of all permutations of n things, taken r at a time, is given by:<br/>
+			nPr = n(n - 1)(n - 2) ... (n - r + 1) =	n!<br/>
+			(n - r)!<br/><br/>
+			Examples:<br/>
+			6P2 = (6 x 5) = 30.<br/>
+			7P3 = (7 x 6 x 5) = 210.<br/>
+			Cor. number of all permutations of n things, taken all at a time = n!.<br/><br/>
+			An Important Result:<br/><br/>
+			If there are n subjects of which p1 are alike of one kind; p2 are alike of another kind; p3 are alike of third kind and so on and pr are alike of rth kind, <br/>
+			such that (p1 + p2 + ... pr) = n.<br/>
+			Then, number of permutations of these n objects is =	n!<br/>
+			(p1!).(p2)!.....(pr!)<br/><br/>
+			<h3>Combinations:</h3><br/>
+			Each of the different groups or selections which can be formed by taking some or all of a number of objects is called a combination.<br/><br/>
+			Examples:<br/>
+			Suppose we want to select two out of three boys A, B, C. Then, possible selections are AB, BC and CA.<br/>
+			Note: AB and BA represent the same selection.<br/>
+			All the combinations formed by a, b, c taking ab, bc, ca.<br/>
+			The only combination that can be formed of three letters a, b, c taken all at a time is abc.<br/>
+			Various groups of 2 out of four persons A, B, C, D are:<br/>
+			AB, AC, AD, BC, BD, CD.<br/>
+			Note that ab ba are two different permutations but they represent the same combination.<br/><br/>
+			<h3>Number of Combinations:</h3><br/>
+			The number of all combinations of n things, taken r at a time is:<br/>
+			nCr =	n!	=	n(n - 1)(n - 2) ... to r factors.<br/>
+			(r!)(n - r)!	r!<br/><br/>
+			<h4>Note:<br/>
+			nCn = 1 and nC0 = 1.</h4><br/>
+			nCr = nC(n - r)<br/><br/>
+			Examples:<br/>
+			i.   11C4 =	(11 x 10 x 9 x 8)	= 330.<br/>
+			(4 x 3 x 2 x 1)<br/>
+			ii.   16C13 = 16C(16 - 13) = 16C3 =	16 x 15 x 14	=	16 x 15 x 14	= 560.<br/>
+			3!	3 x 2 x 1<br/><br/></p>
+
+			</div>
+			<div class="border" style="border-bottom:#000 1px solid"></div>
+
+			<div id="QuestionButton" class="Questions" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleQuestions()"><h2>Questions</h2></div>
+			<div id="ans3" class="ques" style="display:none;font-family: 'Oxygen', sans-serif;"><p>
+			<h3>Problem 1: Find the number of words, with or without meaning, that can be formed with the letters of the word 'CHAIR'.</h3>><br/>
+
+			Solution:<br/>
+
+			'CHAIR' contains 5 letters.<br/>
+
+			Therefore, the number of words that can be formed with these 5 letters = 5! = 5*4*3*2*1 = 120.<br/><br/>
+
+			 
+			<h3>Problem 2: Find the number of words, with or without meaning, that can be formed with the letters of the word 'INDIA'.</h3>><br/>
+
+			Solution:<br/>
+
+			The word 'INDIA' contains 5 letters and 'I' comes twice.<br/>
+
+			When a letter occurs more than once in a word, we divide the factorial of the number of all letters in the word by the number of occurrences of each letter.<br/>
+
+			Therefore, the number of words formed by 'INDIA' = 5!/2! = 60.<br/><br/>
+
+			 
+			<h3>Problem 3: Find the number of words, with or without meaning, that can be formed with the letters of the word 'SWIMMING?</h3>
+			<br/>
+
+			Solution:<br/>
+
+			The word 'SWIMMING contains 8 letters. Of which, I occurs twice and M occurs twice.<br/>
+
+			Therefore, the number of words formed by this word = 8! / (2!*2!) = 10080.<br/><br/>
+
+			 
+			<h3>Problem 4: How many different words can be formed with the letters of the word 'SUPER' such that the vowels always come together?</h3><br/>
+
+			Solution:<br/>
+
+			The word 'SUPER' contains 5 letters.<br/>
+
+			In order to find the number of permutations that can be formed where the two vowels U and E come together.<br/>
+
+			In these cases, we group the letters that should come together and consider that group as one letter.<br/>
+
+			So, the letters are S,P,R, (UE). Now the number of words are 4.<br/>
+
+			Therefore, the number of ways in which 4 letters can be arranged is 4!<br/>
+
+			In U and E, the number of ways in which U and E can be arranged is 2!<br/>
+
+			Hence, the total number of ways in which the letters of the 'SUPER' can be arranged such that vowels are always together are 4! * 2! = 48 ways.<br/><br/>
+
+			 
+			<h3>Problem 5: Find the number of different words that can be formed with the letters of the word 'BUTTER' so that the vowels are always together.</h3><br/>
+
+			Solution:<br/>
+
+			The word 'BUTTER' contains 6 letters.<br/>
+
+			The letters U and E should always come together. So the letters are B, T, T, R, (UE).<br/>
+
+			Number of ways in which the letters above can be arranged = 5!/2! = 60 (since the letter 'T' is repeated twice).<br/>
+
+			Number of ways in which U and E can be arranged = 2! = 2 ways<br/>
+
+			Therefore, total number of permutations possible = 60*2 = 120 ways.<br/><br/>
+
+			<h3>Problem 6: In how many ways can a committee of 1 man and 3 women can be formed from a group of 3 men and 4 women?</h3><br/>
+
+			Solution:<br/>
+
+			No. of ways 1 man can be selected from a group of 3 men = 3C1 = 3! / 1!*(3-1)! = 3 ways.<br/>
+
+			No. of ways 3 women can be selected from a group of 4 women = 4C3 = 4! / (3!*1!) = 4 ways.<br/><br/>
+
+			 
+
+			<h3>Problem 7: Among a set of 5 black balls and 3 red balls, how many selections of 5 balls can be made such that at least 3 of them are black balls.</h3><br/>
+
+			Solution:<br/>
+
+			Selecting at least 3 black balls from a set of 5 black balls in a total selection of 5 balls can be<br/>
+
+			3 B and 2 R<br/>
+
+			4 B and 1 R and<br/>
+
+			5 B and 0 R balls.<br/>
+
+			Therefore, our solution expression looks like this.<br/>
+			5C3 * 3C2 + 5C4 * 3C1 + 5C5 * 3C0 = 46 ways .<br/><br/>
+
+			 
+			<h3>Problem 8: How many 4 digit numbers that are divisible by 10 can be formed from the numbers 3, 5, 7, 8, 9, 0 such that no number repeats?</h3><br/>
+
+			Solution:<br/>
+
+			If a number is divisible by 10, its units place should contain a 0.<br/>
+			_ _ _ 0<br/>
+
+			After 0 is placed in the units place, the tens place can be filled with any of the other 5 digits.<br/>
+
+			Selecting one digit out of 5 digits can be done in 5C1 = 5 ways.<br/>
+
+			After filling the tens place, we are left with 4 digits. Selecting 1 digit out of 4 digits can be done in 4C1 = 4 ways.<br/>
+
+			After filling the hundreds place, the thousands place can be filled in 3C1 = 3 ways.<br/>
+
+			Therefore, the total combinations possible = 5*4*3 = 60.<br/><br/></p>
+			</div>
+			</div>
+		</div>
+
+		<div class="video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/QCq6qRJCTj8" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	function toggleOverview()
+	{
+      var show=document.getElementById('ans1');
+      var display=show.style.display;
+      if(display=='block')
+      {
+      	show.style.display='none';
+      }
+      else
+      {
+      	show.style.display='block';
+      }
+	}
+
+	function toggleBasic()
+	{
+		var show=document.getElementById('ans2');
+		var display=show.style.display;
+		if(display=='block')
+		{
+			show.style.display='none';
+		}
+		else
+		{
+			show.style.display='block';
+		}
+	}
+
+	function toggleQuestions()
+	{
+		var show=document.getElementById('ans3');
+		var display=show.style.display;
+		if(display=='block')
+		{
+			show.style.display='none';
+		}
+		else
+		{
+			show.style.display='block';
+		}
+	}
+</script>
+</body>
+</html>

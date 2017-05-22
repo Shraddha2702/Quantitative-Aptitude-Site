@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+</!DOCTYPE html>
+<html>
+<head>
+
+	<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+	<title>Statistics</title>
+<style type="text/css">
+
+body
+{
+	margin-right: 0px;
+	margin-left: 0px;
+	background-color: #FFCBD3;
+}
+
+header
+	{
+		position: fixed;
+		width: 100%;
+		height: auto;
+		left: 0;
+		top: 0;
+		line-height: 50px;
+		background: rgba(132,231,132,1);
+		z-index: 10;
+		border-bottom: #767676 1px solid;
+	}
+.heading
+{
+	font-family: 'ABeeZee', sans-serif;
+	position: relative;
+	left: 75px;
+	display: inline;
+	line-height: 65px;
+	font-size: 35px;
+	color: rgba(123,123,122,1);
+}
+
+.float {
+	font-family: 'Merriweather', serif;
+	position: fixed;
+	width: 23%;
+	height: 100%;
+	left: 100%;
+	top: 0%;
+	background-color: #e6e6e6;
+	z-index: 100;
+	transition: all .3s ease-in-out;
+}
+.box {
+	position: absolute;
+	width: 100%;
+	left: 0%;
+	height: 9.55%;
+	font-size: 145%;
+	text-align: center;
+	cursor: pointer;
+	background-color: #e6e6e6;
+	color: #222;
+}
+#box1 {
+	top: 0%;
+	height: 14%;
+	background-color: #202020;
+	color: #aaa;
+	font-size: 300%;
+	font-family: 'maleficent';
+	letter-spacing: 2px;
+}
+#box2 {
+	top: 14%;
+}
+#box3 {
+	top: 23.55%;
+}
+#box4 {
+	top: 33.1%;
+}
+#box5 {
+	top: 42.65%;
+	font-size: 140%;
+}
+#box6 {
+	top: 52.2%;
+}
+#box7 {
+	top: 61.75%;
+}
+#box8 {
+	top: 71.3%;
+}
+#box9 {
+	top: 80.85%;
+}
+#box10 {
+	top: 90.4%;
+}
+.hamburger {
+	top: 0%;
+	position: fixed;
+	right: 0%;
+	width: 3%;
+	z-index: 101;
+	cursor: pointer;
+}
+#filler {
+	position: fixed;
+	top: 0%;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 99;
+	opacity: 0.7;
+}
+</style>
+<style type="text/css">
+#nav-toggle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+#nav-toggle {
+	cursor: pointer;
+	padding: 10px 35px 16px 0px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	height: 4px;
+	width: 40px;
+	background: #aaa;
+	position: absolute;
+	display: block;
+	content: '';
+}
+#nav-toggle span:before {
+	top: -10px;
+}
+#nav-toggle span:after {
+	bottom: -10px;
+}
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	transition: all 0.3s ease-in-out;
+}
+#nav-toggle.active span {
+	background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+	top: 0;
+}
+#nav-toggle.active span:before {
+	transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+	transform: rotate(-45deg);
+}
+.contain {
+	position: absolute;
+	top: 2%;
+	right: 1%;
+	height: 5%;
+	width: 8%;
+}
+.box {
+	display: table;
+}
+.box span {
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+}
+.box:hover {
+	background-color: #aaa;
+}
+
+.list
+{
+	position: relative;
+	margin-top: 65px;
+	padding: 0px;
+	width: 100%;
+	background-color: #BDBDBD;
+}
+
+.top-nav
+{
+	border-bottom: #767676 1px solid;
+	border-top: #767676 1px solid;
+}
+
+.top-nav ul
+{
+	position: relative;
+	margin-top: 12px;
+	list-style-type: none;
+	overflow: hidden;
+	padding-left: 0px;
+
+}
+
+
+.top-nav a
+{
+	font-family: 'Oxygen', sans-serif;
+	text-decoration: none;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	padding: 10px 12px;
+
+}
+
+.top-nav li:hover
+{
+	background-color: #000;
+}
+
+.top-nav li
+{
+	display: inline-block;
+	list-style: none;
+}
+
+
+</style>
+
+<body>
+<HEADER>
+<div class="heading"><strong>Statistics</strong></div>
+
+
+<div class="contain" style="top:25px;"><a id="nav-toggle" onclick="menu()" class="hamburger"><span></span></a></div>
+<div id="filler"></div>
+<div class="float" id="float"><a href="loading.html">
+  <div id="box1" class="box"><span>Guide</span></div>
+  </a> <a href="MainPage.html">
+  <div id="box2" class="box"><span>Main Page</span></div>
+  </a> <a href="topics.html">
+  <div id="box3" class="box"><span>Study Topics</span></div>
+  </a> <a href="MathsTricks.html">
+  <div id="box4" class="box"><span>Maths Tricks</span></div>
+  </a> <a href="Books.html">
+  <div id="box5" class="box"><span>Books</span></div>
+  </a> <a href="pdf.html">
+  <div id="box6" class="box"><span>PDFs</span></div>
+  </a> <a href="AboutUs.html">
+  <div id="box7" class="box"><span>About Us</span></div>
+  </a> 
+ </div>
+
+</HEADER>
+
+<div class="list">
+<ul class="top-nav">
+	<li><a href="NumberSystem.html">Basics</a></li>
+	<li><a href="Arithmetic.html">Arithmetic</a></li>
+	<li><a href="Algebra.html">Algebra</a></li>
+	<li><a href="Mensuration.html">Mensuration</a></li>
+	<li><a href="SetTheory.html">Set Theory</a></li>
+	<li><a href="Geometry.html">Geometry</a></li>
+	<li><a href="statistics.html">Statistics</a></li>
+	<li><a href="Permutation.html">Permutation and Combination</a></li>
+	<li><a href="probabilty.html">Probability</a></li>
+</ul>
+</div>	
+
+
+  <script type="text/javascript">function menu(){if (document.getElementById("float").style.left=="77%"){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}else{document.getElementById("float").style.left="77%";document.getElementById("filler").style.left="0%";}}function nomenu(){document.getElementById("float").style.left="100%";document.getElementById("filler").style.left="-100%";}</script> <script type="text/javascript">document.querySelector( "#nav-toggle" ) .addEventListener( "click", function(){this.classList.toggle( "active" );});</script>
+  
+<style type="text/css">
+	.Content
+	{
+		width: 80%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		height: auto;
+		margin-top: 55px;
+		padding-bottom: 50px;
+		background-color: #fff;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	}
+
+	.depth
+	{
+		padding: 20px;
+	}
+
+	.depth .img
+	{
+		margin-top: 20px;
+
+	}
+	.depth img
+	{
+		display: block;
+		width: 75%;
+		height: 50%;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+
+	.boxcontent
+	{
+		display: block;
+		width: 100%;
+		height: auto;
+		margin-right: auto;
+		margin-left: auto;
+		border:#000 2px solid;
+		margin-top: 30px;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+		
+	}
+	.boxcontent .info
+	{
+		padding: 5px 10px;
+	}
+
+	
+
+	.video
+	{
+		margin-top: 40px;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+	
+</style>
+
+<div class="Content">
+	<div class="depth">
+
+		<div class="img">
+			<img src="StatisticsCover.png"/>
+			</div>
+
+		<div class="text">
+			<p style="font-family: 'Oxygen', sans-serif;margin-top:25px"><p>The History of statistics can be said to start around 1749 although, over time, there have been changes to the interpretation of the word statistics. In early times, the meaning was restricted to information about states. This was later extended to include all collections of information of all types, and later still it was extended to include the analysis and interpretation of such data. In modern terms, "statistics" means both sets of collected information, as in national accounts and temperature records, and analytical work which requires statistical inference.
+			<br/><br/>
+
+			Statistical activities are often associated with models expressed using probabilities, and require probability theory for them to be put on a firm theoretical basis: see History of probability.
+
+			A number of statistical concepts have had an important impact on a wide range of sciences. These include the design of experiments and approaches to statistical inference such as Bayesian inference, each of which can be considered to have their own sequence in the development of the ideas underlying modern statistics.<br/><br/></p>
+		</div>
+
+		
+
+		<div class="boxcontent">
+			<div class="info">
+			<div id="OverviewButton" class="Overview" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleOverview()"><h2>Overview</h2></div>
+			<div id="ans1" class="OverD" style="font-family: 'Oxygen', sans-serif;display:none; ">
+			<p>
+				We begin this class by following up on the 'What is Statistics' video and explaining why we study statistics and what statisticians do. When discussing the subject of sample data collection, we will draw a distinction between an observational study and a scientific study. When talking about describing data, we will give appropriate graphical methods for displaying different types of variables. <br/><br/>
+
+				Statistical software can easily produce graphs and calculate statistics at the click of a button. However, in these first couple of lessons we have intentionally provided simple examples that can all be calculated or drawn by hand.  It is important that you have a solid understanding of the concepts that are being introduced.  Before you ask software to produce results, you should have in your mind a good idea of what these results might look like based on your understanding of what it is you are asking the software to do.  Trusting the results of output without understanding what it is you have asked or a sense for how the software produced the results is a dangerous practice. Therefore, this course has been designed to present the important concepts in a manner that is simple enough to be done 'by hand' first and then follow up by using Minitab to implement what you have learned with perhaps datasets that are larger and more complicated.<br/><br/></p>
+			</div>
+
+			<div class="border" style="border-bottom:#000 1px solid"></div>
+
+
+			<div id="BasicButton" class="BasicRules" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleBasic()"><h2>Basic Rules</h2></div>
+			<div id="ans2" class="br" style="font-family: 'Oxygen', sans-serif;display:none;">
+			<p>
+				<h2>Statistics - a set of concepts, rules, and procedures that help us to:</h2>
+				organize numerical information in the form of tables, graphs, and charts;<br/>
+				understand statistical techniques underlying decisions that affect our lives and well-being; and
+				make informed decisions.<br/>
+				<h3>Data - </h3>facts, observations, and information that come from investigations.<br/>
+				Measurement data sometimes called quantitative data -- the result of using some instrument to measure something (e.g., test score, weight);<br/><br/>
+				Categorical data also referred to as frequency or qualitative data.  Things are grouped according to some common property(ies) and the number of members of the group are recorded (e.g., males/females, vehicle type).<br/><br/>
+				Variable - property of an object or event that can take on different values.  For example, college major is a variable that takes on values like mathematics, computer science, English, psychology, etc.<br/><br/>
+				<h3>Discrete Variable -</h3> a variable with a limited number of values (e.g., gender (male/female), college class (freshman/sophomore/junior/senior).<br/><br/>
+				<h3>Continuous Variable -</h3> a variable that can take on many different values, in theory, any value between the lowest and highest points on the measurement scale.<br/><br/>
+				<h3>Independent Variable -</h3> a variable that is manipulated, measured, or selected by the researcher as an antecedent condition to an observed behavior.  In a hypothesized cause-and-effect relationship, the independent variable is the cause and the dependent variable is the outcome or effect.<br/><br/>
+				<h3>Dependent Variable -</h3> a variable that is not under the experimenter's control -- the data.  It is the variable that is observed and measured in response to the independent variable.<br/><br/>
+				<h3>Qualitative Variable -</h3> a variable based on categorical data.<br/><br/>
+				<h3>Quantitative Variable -</h3> a variable based on quantitative data.<br/><br/>
+				<h3>Graphs -</h3> visual display of data used to present frequency distributions so that the shape of the distribution can easily be seen.<br/><br/>
+				<h3>Bar graph -</h3> a form of graph that uses bars separated by an arbitrary amount of space to represent how often elements within a category occur.  The higher the bar, the higher the frequency of occurrence.  The underlying measurement scale is discrete (nominal or ordinal-scale data), not continuous.<br/><br/>
+				<h3>Histogram -</h3> a form of a bar graph used with interval or ratio-scaled data.  Unlike the bar graph, bars in a histogram touch with the width of the bars defined by the upper and lower limits of the interval.  The measurement scale is continuous, so the lower limit of any one interval is also the upper limit of the previous interval.<br/><br/>
+				<h3>Boxplot -</h3> a graphical representation of dispersions and extreme scores.  Represented in this graphic are minimum, maximum, and quartile scores in the form of a box with "whiskers."  The box includes the range of scores falling into the middle 50% of the distribution (Inter Quartile Range = 75th percentile - 25th percentile)and the whiskers are lines extended to the minimum and maximum scores in the distribution or to mathematically defined (+/-1.5*IQR) upper and lower fences.<br/><br/>
+				<h3>Scatterplot -</h3> a form of graph that presents information from a bivariate distribution.  In a scatterplot, each subject in an experimental study is represented by a single point in two-dimensional space.  The underlying scale of measurement for both variables is continuous (measurement data).  This is one of the most useful techniques for gaining insight into the relationship between tw variables.<br/><br/>
+				<h3>Measures of Center -</h3> Plotting data in a frequency distribution shows the general shape of the distribution and gives a general sense of how the numbers are bunched.  Several statistics can be used to represent the "center" of the distribution.  These statistics are commonly referred to as measures of central tendency.<br/><br/>
+				Mode - The mode of a distribution is simply defined as the most frequent or common score in the distribution.  The mode is the point or value of X that corresponds to the highest point on the distribution.  If the highest frequency is shared by more than one value, the distribution is said to be multimodal.  It is not uncommon to see distributions that are bimodal reflecting peaks in scoring at two different points in the distribution.<br/><br/>
+				<h3>Median -</h3> The median is the score that divides the distribution into halves; half of the scores are above the median and half are below it when the data are arranged in numerical order.  The median is also referred to as the score at the 50th percentile in the distribution.  The median location of N numbers can be found by the formula (N + 1) / 2.  When N is an odd number, the formula yields a integer that represents the value in a numerically ordered distribution corresponding to the median location.
+				<br/>  (For example, in the distribution of numbers (3 1 5 4 9 9 8) the median location is (7 + 1) / 2 = 4.  When applied to the ordered distribution (1 3 4 5 8 9 9), the value 5 is the median, three scores are above 5 and three are below 5.  If there were only 6 values (1 3 4 5 8 9), the median location is (6 + 1) / 2 = 3.5.  In this case the median is half-way between the 3rd and 4th scores (4 and 5) or 4.5.<br/><br/>
+				<h3>Mean -</h3> The mean is the most common measure of central tendency and the one that can be mathematically manipulated.  It is defined as the average of a distribution is equal to the SX / N.  Simply, the mean is computed by summing all the scores in the distribution (SX) and dividing that sum by the total number of scores (N).  The mean is the balance point in a distribution such that if you subtract each value in the distribution from the mean and sum all of these deviation scores, the result will be zero.<br/><br/>
+				<h3>Measures of Spread -</h3> Although the average value in a distribution is informative about how scores are centered in the distribution, the mean, median, and mode lack context for interpreting those statistics.  Measures of variability provide information about the degree to which individual scores are clustered about or deviate from the average value in a distribution.<br/><br/>
+				<h3>Range -</h3> The simplest measure of variability to compute and understand is the range.  The range is the difference between the highest and lowest score in a distribution.  Although it is easy to compute, it is not often used as the sole measure of variability due to its instability.  Because it is based solely on the most extreme scores in the distribution and does not fully reflect the pattern of variation within a distribution, the range is a very limited measure of variability.<br/><br/>
+				<h3>Interquartile Range (IQR) -</h3> Provides a measure of the spread of the middle 50% of the scores.  The IQR is defined as the 75th percentile - the 25th percentile.  The interquartile range plays an important role in the graphical method known as the boxplot.  The advantage of using the IQR is that it is easy to compute and extreme scores in the distribution have much less impact but its strength is also a weakness in that it suffers as a measure of variability because it discards too much data.  Researchers want to study variability while eliminating scores that are likely to be accidents.  The boxplot allows for this for this distinction and is an important tool for exploring data.<br/><br/>
+				<h3>Variance - </h3>The variance is a measure based on the deviations of individual scores from the mean.  As noted in the definition of the mean, however, simply summing the deviations will result in a value of 0.  To get around this problem the variance is based on squared deviations of scores about the mean. <br/> When the deviations are squared, the rank order and relative distance of scores in the distribution is preserved while negative values are eliminated. <br/> Then to control for the number of subjects in the distribution, the sum of the squared deviations, S(X - `X), is divided by N (population) or by N - 1 (sample).  The result is the average of the sum of the squared deviations and it is called the variance.<br/><br/>
+				<h3>Standard deviation -</h3> The standard deviation (s or s) is defined as the positive square root of the variance.  The variance is a measure in squared units and has little meaning with respect to the data.  Thus, the standard deviation is a measure of variability expressed in the same units as the data.  The standard deviation is very much like a mean or an "average" of these deviations.  In a normal (symmetric and mound-shaped) distribution, about two-thirds of the scores fall between +1 and -1 standard deviations from the mean and the standard deviation is approximately 1/4 of the range in small samples (N < 30) and 1/5 to 1/6 of the range in large samples (N > 100).<br/><br/>
+				<h3>Measures of Shape -</h3> For distributions summarizing data from continuous measurement scales, statistics can be used to describe how the distribution rises and drops.<br/><br/>
+				<h3>Symmetric -</h3> Distributions that have the same shape on both sides of the center are called symmetric.  A symmetric distribution with only one peak is referred to as a normal distribution.<br/><br/>
+				<h3>Skewness -</h3> Refers to the degree of asymmetry in a distribution.  Asymmetry often reflects extreme scores in a distribution.
+				<h3>Positively skewed -</h3> A distribution is positively skewed when is has a tail extending out to the right (larger numbers)  When a distribution is positively skewed, the mean is greater than the median reflecting the fact that the mean is sensitive to each score in the distribution and is subject to large shifts when the sample is small and contains extreme scores.<br/><br/>
+				<h3>Negatively skewed -</h3> A negatively skwed distribution has an extended tail pointing to the left (smaller numbers) and reflects bunching of numbers in the upper part of the distribution with fewer scores at the lower end of the measurement scale.<br/><br/>
+				<h3>Kurtosis -</h3> Like skewness, kurtosis has a specific mathematical definition, but generally it refers to how scores are concentrated in the center of the distribution, the upper and lower tails (ends), and the shoulders (between the center and tails) of a distribution.<br/><br/>
+				<h3>Mesokurtic -</h3> A normal distribution is called mesokurtic.  The tails of a mesokurtic distribution are neither too thin or too thick, and there are neither too many or too few scores in the center of the distribution.<br/><br/>
+				<h3>Platykurtic - </h3>Starting with a mesokurtic distribution and moving scores from both the center and tails into the shoulders, the distribution flattens out and is referred to as platykurtic.<br/><br/>
+				<h3>Leptokurtic -</h3> If you move scores from shoulders of a mesokurtic distribution into the center and tails of a distribution, the result is a peaked distribution with thick tails.  This shape is referred to as leptokurtic.<br/><br/></p>
+			</div>
+			<div class="border" style="border-bottom:#000 1px solid"></div>
+
+			<div id="QuestionButton" class="Questions" style="cursor:pointer;font-family: 'Oxygen', sans-serif;" onclick="toggleQuestions()"><h2>Questions</h2></div>
+			<div id="ans3" class="ques" style="display:none;font-family: 'Oxygen', sans-serif;">
+			<p>
+				<h3>Problem 1<br/>
+				In one state, 52% of the voters are Republicans, and 48% are Democrats. In a second state, 47% of the voters are Republicans, and 53% are Democrats. Suppose a simple random sample of 100 voters are surveyed from each state.<br/>
+
+				What is the probability that the survey will show a greater percentage of Republican voters in the second state than in the first state?</h3>
+
+				(A) 0.04 <br/>
+				(B) 0.05 <br/>
+				(C) 0.24 <br/>
+				(D) 0.71 <br/>
+				(E) 0.76<br/>
+
+				Solution<br/>
+				The correct answer is C. For this analysis, let P1 = the proportion of Republican voters in the first state, P2 = the proportion of Republican voters in the second state, p1 = the proportion of Republican voters in the sample from the first state, and p2 = the proportion of Republican voters in the sample from the second state. The number of voters sampled from the first state (n1) = 100, and the number of voters sampled from the second state (n2) = 100.<br/>
+
+				The solution involves four steps.<br/><br/>
+
+				Make sure the sample size is big enough to model differences with a normal population. Because n1P1 = 100 * 0.52 = 52, n1(1 - P1) = 100 * 0.48 = 48, n2P2 = 100 * 0.47 = 47, and n2(1 - P2) = 100 * 0.53 = 53 are each greater than 10, the sample size is large enough.<br/><br/>
+
+				Find the mean of the difference in sample proportions: E(p1 - p2) = P1 - P2 = 0.52 - 0.47 = 0.05.<br/>
+
+				Find the standard deviation of the difference.<br/>
+				σd = sqrt{ [ P1(1 - P1) / n1 ] + [ P2(1 - P2) / n2 ] } <br/>
+				σd = sqrt{ [ (0.52)(0.48) / 100 ] + [ (0.47)(0.53) / 100 ] } <br/>
+				σd = sqrt (0.002496 + 0.002491) = sqrt(0.004987) = 0.0706<br/><br/>
+				Find the probability. This problem requires us to find the probability that p1 is less than p2. This is equivalent to finding the probability that p1 - p2 is less than zero. To find this probability, we need to transform the random variable (p1 - p2) into a z-score. That transformation appears below.<br/>
+				z p1 - p2 = (x - μ p1 - p2 ) / σd = = (0 - 0.05)/0.0706 = -0.7082<br/>
+				We find that the probability of a z-score being -0.7082 or less is 0.24.<br/>
+				Therefore, the probability that the survey will show a greater percentage of Republican voters in the second state than in the first state is 0.24.<br/><br/></p>
+			</div>
+			</div>
+		</div>
+
+		<div class="video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/9FtHB7V14Fo" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	function toggleOverview()
+	{
+      var show=document.getElementById('ans1');
+      var display=show.style.display;
+      if(display=='block')
+      {
+      	show.style.display='none';
+      }
+      else
+      {
+      	show.style.display='block';
+      }
+	}
+
+	function toggleBasic()
+	{
+		var show=document.getElementById('ans2');
+		var display=show.style.display;
+		if(display=='block')
+		{
+			show.style.display='none';
+		}
+		else
+		{
+			show.style.display='block';
+		}
+	}
+
+	function toggleQuestions()
+	{
+		var show=document.getElementById('ans3');
+		var display=show.style.display;
+		if(display=='block')
+		{
+			show.style.display='none';
+		}
+		else
+		{
+			show.style.display='block';
+		}
+	}
+</script>
+</body>
+</html>
